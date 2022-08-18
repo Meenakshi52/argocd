@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  name: platform-nats-internal-cluster
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  description: Project for CPaaS
+  destinations:
+    - namespace: "*"
+      server: "*"
+  sourceRepos:
+    - "*"
